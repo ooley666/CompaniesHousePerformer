@@ -1,0 +1,316 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="NavigateToSearch" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="oSuccess" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>NavigateToSearch_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="NavigateToSearch" sap:VirtualizedContainerService.HintSize="1250,3293" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Companies House - GOV.UK" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="760,3270" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="8c6f1c43-49f5-445e-af4b-4b331bab5ede" Timeout="10" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="758,3075" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="724,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Launching companies house website&quot;]" />
+            <uix:NCheckState DisplayName="&quot;Companies House&quot; label appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="724,2840" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="8c6f1c43-49f5-445e-af4b-4b331bab5ede" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="722,2330" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Companies House logo appeared&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Find company information'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="688,194" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c6f1c43-49f5-445e-af4b-4b331bab5ede" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="gov.uk/government/organisations/companies-house" ContentHash="hNLzFu_nok62NUl0JnEYsg" DesignTimeRectangle="811, 582, 222, 23" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Find company information' parentid='content' tag='A' type='' class='govuk-link govuk-link--no-underline govuk-!-font-weight-bold brand__color' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Find company information' /&gt;" Guid="bedd70b7-d077-440a-94d7-5ee95b0a3572" InformativeScreenshot="fcc18c1b4d4c863d7929e741231cce40.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/XH6wL3isw0KMK1N8kan31A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Companies House - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="811, 622, 237, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='File your company accounts' parentid='content' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='File your company accounts' parentid='content' tag='A' type='' class='govuk-link govuk-link--no-underline govuk-!-font-weight-bold brand__color' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='File your company accounts' /&gt;" Guid="a7539781-296b-48a4-83fb-ac8a4883b90e" ImageBase64="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" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="&quot;Find company inforamtion&quot; text appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="688,1901" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="8c6f1c43-49f5-445e-af4b-4b331bab5ede" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="686,1391" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="652,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Get info paged opened OK&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Start now'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,266" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c6f1c43-49f5-445e-af4b-4b331bab5ede" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="gov.uk/get-information-about-a-company" ContentHash="u-mJfs_iN0G8CQeq05KLlQ" DesignTimeRectangle="359, 570, 197, 53" DesignTimeScaleFactor="1.25" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='A' type='' class='gem-c-button govuk-button govuk-button--start gem-c-button--bottom-margin' aaname='       Start now               ' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Start now' /&gt;" Guid="65e168c7-be8b-48a3-8650-b575a7b59ce8" InformativeScreenshot="4796317f66ce4336470ead956baae836.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/KyiE9Hi7ek2XLZUwwZfKDw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Get information about a company - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="359, 713, 788, 31" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;h2' parentid='content' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='content' tag='H2' class='gem-c-related-navigation__sub-heading gem-c-related-navigation__sub-heading--footer' aaname='Explore the topic' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Explore the topic' /&gt;" Guid="6ef1b85c-6d02-4d74-8c32-751dc94f6b06" ImageBase64="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" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                              <uix:TargetAnchorable.PointOffset>
+                                <uix:PointOffset />
+                              </uix:TargetAnchorable.PointOffset>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions Mode="Disappears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Target>
+                                <uix:TargetAnchorable BrowserURL="gov.uk/get-information-about-a-company" ContentHash="33jbWpQ6NU6frYHyDaHh8w" DesignTimeRectangle="481, 239, 630, 100" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='gem-c-heading__text govuk-heading-xl' aaname='     Get information about a company ' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Get information about a company' /&gt;" Guid="1ecb164c-28b1-4bea-96f4-3fe0b651343f" InformativeScreenshot="3db45ad5af7f9eed71dbd24f0f7af348.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/zeAvMRE3TUK6nOXz-ykAIw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Get information about a company - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                                  <uix:TargetAnchorable.PointOffset>
+                                    <uix:PointOffset />
+                                  </uix:TargetAnchorable.PointOffset>
+                                </uix:TargetAnchorable>
+                              </uix:VerifyExecutionOptions.Target>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                        <Delay sap2010:Annotation.AnnotationText="" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="652,154" sap2010:WorkflowViewState.IdRef="Delay_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Delay>
+                        <uix:NCheckState DisplayName="&quot;Search the register&quot; label appears" Exists="[oSuccess]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,736" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="8c6f1c43-49f5-445e-af4b-4b331bab5ede" Version="V5">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,226" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Register opened OK&quot;]" />
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="650,174" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[new SystemException(&quot;Register did NOT open&quot;)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk" ContentHash="LJWhZKgYokS4lFHu3gzmSw" DesignTimeRectangle="359, 474, 1200, 75" DesignTimeScaleFactor="1.25" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='start-searching' tag='H1' type='' class='main-title center' aaname=' Search the register ' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search the register' /&gt;" Guid="6cfe2a96-2e64-4863-8d9c-79a882be1efc" InformativeScreenshot="bf6d0b5b2e51ba76a58dfaad14f29f57.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/UKG_67HVmUGXiQe1wMqkDw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search the register - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="371, 707, 1115, 63" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='site-search-text' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='site-search-text' tag='INPUT' type='search' class='govuk-input' aaname='Enter company name, number or officer name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="e776b6b4-2b72-4426-b2d2-35a51cecddfd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABFsAAAA/CAYAAAA/isdXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHdSURBVHhe7dixDYAwAAPB9GRGtmPOIEqggy/vpG88gsc255IkSZIkSdL/xn6s8RwlSZIkSZL0rdvZAgAAAMB3zhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIORsAQAAAAg5WwAAAABCzhYAAACAkLMFAAAAIPQ6WyRJkiRJkvQvZ4skSZIkSVLYdbacQYpvnD2GRV4AAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                              <uix:TargetAnchorable.PointOffset>
+                                <uix:PointOffset />
+                              </uix:TargetAnchorable.PointOffset>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="686,174" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[new SystemException(&quot;Get info page did not open&quot;)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="gov.uk/get-information-about-a-company" ContentHash="33jbWpQ6NU6frYHyDaHh8w" DesignTimeRectangle="481, 239, 630, 100" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='gem-c-heading__text govuk-heading-xl' aaname='     Get information about a company ' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Get information about a company' /&gt;" Guid="1ecb164c-28b1-4bea-96f4-3fe0b651343f" InformativeScreenshot="3db45ad5af7f9eed71dbd24f0f7af348.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/zeAvMRE3TUK6nOXz-ykAIw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Get information about a company - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="722,174" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new SystemException(&quot;Comp House did not launch&quot;)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="gov.uk/government/organisations/companies-house" ContentHash="PkvxMacDvkyOIoINQ74RDA" DesignTimeRectangle="491, 561, 156, 21" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='content' tag='SPAN' type='' class='gem-c-organisation-logo__name' aaname='Companies House' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Companies House' /&gt;" Guid="bf564a2f-297d-4471-9101-2eaefff86f2e" InformativeScreenshot="b66205cc1db44c33c0648494ba9ccddf.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/EmFMuiPJEUOGJkKxP7nBhg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Companies House - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="466, 524, 330, 60" FuzzySelectorArgument="&lt;webctrl aaname='            ' parentid='content' tag='DIV' type='' class='gem-c-organisation-logo__container gem-c-organisation-logo__crest gem-c-organisation-logo__crest--single-identity brand__border-color' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Companies House' /&gt;" Guid="4d030baa-fdcc-4525-af52-efec0266cd2a" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="Rt1QGU8YQ0SOm6OHK7oSWA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOlSURBVGhD7Zg/bxNBEMXzReihgxZ6qOEL5AuARBeJP1UaRAcNf0oakNJSBAGRUiASJApAUACBAgoiQRrSUBn9LnrH5Hn2zmefcSx5pCefd2d39u3OzM7d0rHL64N5xpI3zBsWBGaNBYEMF25vD9bf7h4Cba7XB6ZC4OS1jYELba7XB6ZCAGzv7NWLf7WzN9TfF3olwC4fX3laPV968KYmwDNt9PV9Er0SuLr2oVrwo63vg7sbX2sCd55/GTx8+a16RsfHTYJeCVxZe18vuiTo+LhJ0CsBnUCTzMUJ4DIXLQZoOzIEyOn4NH5+9uaLup1nBakWjKBHG31R/8zqZqVHzIx7T3QmcP7WVr0wyenVzSG9n7//1P08ez9kfu3/00GUrbqgMwFuVZcbjz8e0mE3XSAedbKA5+5we23ohYBcRIgptKSTEfj0Y3/IXhs6E8gyTfRrEN1H4m7EGJdxUmwjAYycC4EpQKKpSCuJ6+FWT94dzOPZCZvERDZ/RJFArGWQtokiPDgRP4EmLN97fWgstZRKFEdKwCdAuvhnNp421ysBWy7L9/PxKYEswBDXawLuh1sAj5E2ZFKKj5RAFmDTLIkdxIULseh6ICUAyO0SjlSXFb7oeb8PMOeJlWfVM7bYMEmTvSKBEpTjPa9PApUd48zZmUDM8Zlvn7p+UO9k8HQMort2yVRCZwJRssDi+LM0SltWM/nF6P1tKBJgt7LcH0/ALx8hSwLZaYGY8SDp/awhOzlhiACG9PrH5ORv3EL9cce8eqQs1kJjElAQ0odOHBPfG+KGsGhsiyBryjYhJRAn5JqPC2VHdAq6cORKSn+McQIqAvlFVwvTHMwZTxxi6MYTGokAkHGlMhnNKlEJ/e7PmYhsSdyWSppSKk0JkOu9oqTNBR2ueNXx2i3cBBdgdz/v7lfP/lWCMbiI20HcFjq6IxwpAaDdJEezGxjDKK+BqnW0K/FbEPqaQ6L/5HlcI47RaTOWWBMxbOrOKSULUCSgz4NkhuyDFKLjFmLFGAu6WMh5VSlXcdvoKR277YgiAYArIOxKNBwDXe4Sx7lrVK5m1Si7rfmRGKC4i+IP1/N1RTQSiO+2+DNHyZFnfgtJslB2iUkYx477u4b6mBsbsZzO7qKRCXgwzUJ8TY5GAiAe8/+WNvcZiUD8ypwJLoNblKB33gyZK0ZRxmpCKwHSpnyTl3CCjTbXmxTMydzYUKyNYqeVwFHHgsCssSAwaywIzBpzT+AvCVGRDgUfV1kAAAAASUVORK5CYII=" InformativeScreenshot="7c7a27763b03c2abc8719b17bcf41779.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/NWX3BBwLtECdQXsI7K5fqQ" Selector="&lt;html app='msedge.exe' title='Companies House - GOV.UK' /&gt;" Url="https://www.gov.uk/government/organisations/companies-house" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
