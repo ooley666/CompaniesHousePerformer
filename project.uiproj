@@ -1,0 +1,6 @@
+{
+  "Name": "CompaniesHouse_Performer_MaxLavrov",
+  "ProjectType": "Process",
+  "Description": "Process performer for the Companies House REFramework assignment. Searches for company on Companies Hoise website and saves text fields to Excel file then uploads it to storage bucket.",
+  "MainFile": "Main.xaml"
+}
