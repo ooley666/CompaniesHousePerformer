@@ -112,7 +112,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ExtractCompanuyData" sap:VirtualizedContainerService.HintSize="810,2833" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractCompanuyData" sap:VirtualizedContainerService.HintSize="817,2833" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,12 +179,12 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Found &quot; + in_CompanyNumber + &quot; information&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Text - Company preview'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Link - Company preview info'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="zR7IZ9qu8UWhBb7i6mBx4A" DesignTimeRectangle="481, 647, 617, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='P' type='' class='meta crumbtrail' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='{0} - Incorporated on *' /&gt;&quot;, in_CompanyNumber)]" Guid="cb3ccf0a-5998-40ef-87e6-d94678d57ab6" InformativeScreenshot="750e1452d88fc44b4aa9520919799b6f.jpg" Reference="bHP76iterEOjejFi4gjgZg/gd5MrbBVVE6az5KgdcV-Kg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="961xXYNZa0OUsRUXnU9nCA" DesignTimeRectangle="481, 780, 100, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5d76093f-28db-4464-bcf6-2ee2ea04cb9f" InformativeScreenshot="7aa9bd686a3b81d511ad7984b0558372.jpg" Reference="bHP76iterEOjejFi4gjgZg/gd5MrbBVVE6az5KgdcV-Kg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
                           <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target DesignTimeRectangle="481, 555, 251, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5184793d-33c0-4a87-a227-6911ef0f6ae9" SearchSteps="FuzzySelector" />
+                            <uix:Target DesignTimeRectangle="481, 807, 617, 23" ElementType="Text" FuzzyAccuracy="0.77" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' type='' class='meta crumbtrail' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='* {0} - Incorporated on * ' matching:aaname='fuzzy' fuzzylevel:aaname='0.47' tag='P' innertext='* {0} - Incorporated on *' matching:innertext='fuzzy' fuzzylevel:innertext='0.47' /&gt;&quot;, in_CompanyNumber)]" Guid="7b128ef5-cdf0-443c-8bc9-91f54571c915" SearchSteps="FuzzySelector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
@@ -205,7 +205,7 @@
                 <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="686,744" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -249,10 +249,10 @@
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="zR7IZ9qu8UWhBb7i6mBx4A" DesignTimeRectangle="481, 647, 617, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='P' type='' class='meta crumbtrail' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='{0} - Incorporated on *' /&gt;&quot;, in_CompanyNumber)]" Guid="cb3ccf0a-5998-40ef-87e6-d94678d57ab6" InformativeScreenshot="750e1452d88fc44b4aa9520919799b6f.jpg" Reference="bHP76iterEOjejFi4gjgZg/gd5MrbBVVE6az5KgdcV-Kg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="961xXYNZa0OUsRUXnU9nCA" DesignTimeRectangle="481, 780, 100, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5d76093f-28db-4464-bcf6-2ee2ea04cb9f" InformativeScreenshot="7aa9bd686a3b81d511ad7984b0558372.jpg" Reference="bHP76iterEOjejFi4gjgZg/gd5MrbBVVE6az5KgdcV-Kg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="481, 555, 251, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5184793d-33c0-4a87-a227-6911ef0f6ae9" SearchSteps="FuzzySelector" />
+                      <uix:Target DesignTimeRectangle="481, 807, 617, 23" ElementType="Text" FuzzyAccuracy="0.77" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' type='' class='meta crumbtrail' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='* {0} - Incorporated on * ' matching:aaname='fuzzy' fuzzylevel:aaname='0.47' tag='P' innertext='* {0} - Incorporated on *' matching:innertext='fuzzy' fuzzylevel:innertext='0.47' /&gt;&quot;, in_CompanyNumber)]" Guid="7b128ef5-cdf0-443c-8bc9-91f54571c915" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
