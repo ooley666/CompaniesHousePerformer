@@ -4,7 +4,7 @@
   "description": "Process performer for the Companies House REFramework assignment. Searches for company on Companies Hoise website and saves text fields to Excel file then uploads it to storage bucket.",
   "main": "Main.xaml",
   "dependencies": {
-    "CoimpaniesHouseUILibrary": "[1.0.2]",
+    "CoimpaniesHouseUILibrary": "[1.0.4]",
     "UiPath.Excel.Activities": "[3.7.0-preview]",
     "UiPath.System.Activities": "[26.10.0]",
     "UiPath.Testing.Activities": "[25.10.3]",
