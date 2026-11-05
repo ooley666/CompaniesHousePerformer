@@ -112,75 +112,151 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ExtractCompanuyData" sap:VirtualizedContainerService.HintSize="817,2833" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractCompanuyData" sap:VirtualizedContainerService.HintSize="748,1653" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Search the register page" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="724,2810" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Search the register page" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,1630" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="722,2668" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,1488" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Entering company reference number&quot;]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Enter company name, num…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="688,318" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Text="[in_CompanyNumber]" Version="V5">
-              <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk" ContentHash="IwACJb2_pEyXDqddU5Yc4w" DesignTimeRectangle="490, 610, 892, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='site-search-text' tag='INPUT' type='search' class='govuk-input' aaname='Enter company name, number or officer name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9b0feb8a-9b35-4c16-81fa-93cf90fbc45e" InformativeScreenshot="fd2a326546c1189704dfb207a5658744.jpg" Reference="bHP76iterEOjejFi4gjgZg/W0C3UP4Y3k-g_66gmmd9qQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search the register - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1381, 610, 50, 50" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='search-submit' tag='BUTTON' type='submit' class='search-submit gem-c-search__submit' aaname='Search' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search' /&gt;" Guid="7c553233-7848-485d-ae7c-2aaef2e3f15d" SearchSteps="FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NTypeInto.Target>
-              <uix:NTypeInto.VerifyOptions>
-                <uix:VerifyExecutionTypeIntoOptions Mode="TextChanges" Retry="True">
-                  <uix:VerifyExecutionTypeIntoOptions.Target>
-                    <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk" ContentHash="IwACJb2_pEyXDqddU5Yc4w" DesignTimeRectangle="490, 610, 892, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='site-search-text' tag='INPUT' type='search' class='govuk-input' aaname='Enter company name, number or officer name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9b0feb8a-9b35-4c16-81fa-93cf90fbc45e" InformativeScreenshot="fd2a326546c1189704dfb207a5658744.jpg" Reference="bHP76iterEOjejFi4gjgZg/W0C3UP4Y3k-g_66gmmd9qQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search the register - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
-                      <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                          <uix:Target DesignTimeRectangle="1381, 610, 50, 50" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='search-submit' tag='BUTTON' type='submit' class='search-submit gem-c-search__submit' aaname='Search' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search' /&gt;" Guid="7c553233-7848-485d-ae7c-2aaef2e3f15d" SearchSteps="FuzzySelector" />
-                        </scg:List>
-                      </uix:TargetAnchorable.Anchors>
-                    </uix:TargetAnchorable>
-                  </uix:VerifyExecutionTypeIntoOptions.Target>
-                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                </uix:VerifyExecutionTypeIntoOptions>
-              </uix:NTypeInto.VerifyOptions>
-            </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="688,194" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk" ContentHash="EmuXyQYwv0eFFFglmFRFDw" DesignTimeRectangle="1381, 492, 50, 50" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='search-submit' tag='BUTTON' type='submit' class='search-submit gem-c-search__submit' aaname='Search' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search' /&gt;" Guid="4c594d2e-88b9-4fa0-9f53-0375b036bb85" InformativeScreenshot="55203cee222cbd8180a8ce2f96822336.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/DnKOWxMmPEWPoMImbeueTg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search the register - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
-                  <uix:TargetAnchorable.PointOffset>
-                    <uix:PointOffset />
-                  </uix:TargetAnchorable.PointOffset>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="688,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
-            <uix:NCheckState DisplayName="Company preview text appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="688,1798" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
+            <uix:NCheckState DisplayName="&quot;Enter company name&quot; input appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,1428" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="686,718" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,918" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Found &quot; + in_CompanyNumber + &quot; information&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Link - Company preview info'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Entering company reference number&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Enter company name, num…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,318" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Text="[in_CompanyNumber]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk" ContentHash="IwACJb2_pEyXDqddU5Yc4w" DesignTimeRectangle="490, 610, 892, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='site-search-text' tag='INPUT' type='search' class='govuk-input' aaname='Enter company name, number or officer name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9b0feb8a-9b35-4c16-81fa-93cf90fbc45e" InformativeScreenshot="fd2a326546c1189704dfb207a5658744.jpg" Reference="bHP76iterEOjejFi4gjgZg/W0C3UP4Y3k-g_66gmmd9qQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search the register - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1381, 610, 50, 50" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='search-submit' tag='BUTTON' type='submit' class='search-submit gem-c-search__submit' aaname='Search' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search' /&gt;" Guid="7c553233-7848-485d-ae7c-2aaef2e3f15d" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions Mode="TextChanges" Retry="True">
+                        <uix:VerifyExecutionTypeIntoOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk" ContentHash="IwACJb2_pEyXDqddU5Yc4w" DesignTimeRectangle="490, 610, 892, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='site-search-text' tag='INPUT' type='search' class='govuk-input' aaname='Enter company name, number or officer name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9b0feb8a-9b35-4c16-81fa-93cf90fbc45e" InformativeScreenshot="fd2a326546c1189704dfb207a5658744.jpg" Reference="bHP76iterEOjejFi4gjgZg/W0C3UP4Y3k-g_66gmmd9qQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search the register - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="1381, 610, 50, 50" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='search-submit' tag='BUTTON' type='submit' class='search-submit gem-c-search__submit' aaname='Search' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search' /&gt;" Guid="7c553233-7848-485d-ae7c-2aaef2e3f15d" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:VerifyExecutionTypeIntoOptions.Target>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
                     <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk" ContentHash="EmuXyQYwv0eFFFglmFRFDw" DesignTimeRectangle="1381, 492, 50, 50" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='search-submit' tag='BUTTON' type='submit' class='search-submit gem-c-search__submit' aaname='Search' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search' /&gt;" Guid="4c594d2e-88b9-4fa0-9f53-0375b036bb85" InformativeScreenshot="55203cee222cbd8180a8ce2f96822336.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/DnKOWxMmPEWPoMImbeueTg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search the register - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="616,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                  <uix:NCheckState DisplayName="Company preview text appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="616,48" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="686,718" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Found &quot; + in_CompanyNumber + &quot; information&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Link - Company preview info'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,194" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="961xXYNZa0OUsRUXnU9nCA" DesignTimeRectangle="481, 780, 100, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5d76093f-28db-4464-bcf6-2ee2ea04cb9f" InformativeScreenshot="7aa9bd686a3b81d511ad7984b0558372.jpg" Reference="bHP76iterEOjejFi4gjgZg/gd5MrbBVVE6az5KgdcV-Kg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="481, 807, 617, 23" ElementType="Text" FuzzyAccuracy="0.77" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' type='' class='meta crumbtrail' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='* {0} - Incorporated on * ' matching:aaname='fuzzy' fuzzylevel:aaname='0.47' tag='P' innertext='* {0} - Incorporated on *' matching:innertext='fuzzy' fuzzylevel:innertext='0.47' /&gt;&quot;, in_CompanyNumber)]" Guid="7b128ef5-cdf0-443c-8bc9-91f54571c915" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <Assign sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="686,744" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckState DisplayName="&quot;No results found&quot; label appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,684" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,174" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[new BusinessRuleException(&quot;No result found for company search with Reference Code &quot; + in_CompanyNumber)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="650,174" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[new SystemException(&quot;Something went wrong while searching the company&quot;)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="kj_vjXzsuE2_bVo__cXmrw" DesignTimeRectangle="481, 869, 630, 25" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='no-results-heading' tag='H3' /&gt;" Guid="b76801b1-54bc-459f-a7b9-8303ef32a6ce" InformativeScreenshot="434c390b36f49f5a932a51b787b0eb79.jpg" Reference="bHP76iterEOjejFi4gjgZg/D-p7k7-YgkCdwVjpGtSqyA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                              <uix:TargetAnchorable.PointOffset>
+                                <uix:PointOffset />
+                              </uix:TargetAnchorable.PointOffset>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
                       <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="961xXYNZa0OUsRUXnU9nCA" DesignTimeRectangle="481, 780, 100, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5d76093f-28db-4464-bcf6-2ee2ea04cb9f" InformativeScreenshot="7aa9bd686a3b81d511ad7984b0558372.jpg" Reference="bHP76iterEOjejFi4gjgZg/gd5MrbBVVE6az5KgdcV-Kg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
                           <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
@@ -188,81 +264,35 @@
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                  <Assign sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="Assign_1">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Delay_3" />
-                </Sequence>
-              </uix:NCheckState.IfExists>
-              <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="686,744" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="&quot;No results found&quot; label appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,684" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="c0909170-1280-4683-bcc2-40b1a31e2352" Version="V5">
-                    <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,174" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Throw Exception="[new BusinessRuleException(&quot;No result found for company search with Reference Code &quot; + in_CompanyNumber)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
-                      </Sequence>
-                    </uix:NCheckState.IfExists>
-                    <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="650,174" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Throw Exception="[new SystemException(&quot;Something went wrong while searching the company&quot;)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                      </Sequence>
-                    </uix:NCheckState.IfNotExists>
-                    <uix:NCheckState.Target>
-                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="kj_vjXzsuE2_bVo__cXmrw" DesignTimeRectangle="481, 869, 630, 25" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='no-results-heading' tag='H3' /&gt;" Guid="b76801b1-54bc-459f-a7b9-8303ef32a6ce" InformativeScreenshot="434c390b36f49f5a932a51b787b0eb79.jpg" Reference="bHP76iterEOjejFi4gjgZg/D-p7k7-YgkCdwVjpGtSqyA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
-                        <uix:TargetAnchorable.PointOffset>
-                          <uix:PointOffset />
-                        </uix:TargetAnchorable.PointOffset>
-                      </uix:TargetAnchorable>
                     </uix:NCheckState.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
                 </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="650,174" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new SystemException(&quot;Failed to open search register&quot;)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/search" ContentHash="961xXYNZa0OUsRUXnU9nCA" DesignTimeRectangle="481, 780, 100, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5d76093f-28db-4464-bcf6-2ee2ea04cb9f" InformativeScreenshot="7aa9bd686a3b81d511ad7984b0558372.jpg" Reference="bHP76iterEOjejFi4gjgZg/gd5MrbBVVE6az5KgdcV-Kg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='All search results - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk" ContentHash="IwACJb2_pEyXDqddU5Yc4w" DesignTimeRectangle="490, 610, 892, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='site-search-text' tag='INPUT' type='search' class='govuk-input' aaname='Enter company name, number or officer name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9b0feb8a-9b35-4c16-81fa-93cf90fbc45e" InformativeScreenshot="fd2a326546c1189704dfb207a5658744.jpg" Reference="bHP76iterEOjejFi4gjgZg/W0C3UP4Y3k-g_66gmmd9qQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search the register - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="481, 807, 617, 23" ElementType="Text" FuzzyAccuracy="0.77" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl parentid='results' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' type='' class='meta crumbtrail' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='* {0} - Incorporated on * ' matching:aaname='fuzzy' fuzzylevel:aaname='0.47' tag='P' innertext='* {0} - Incorporated on *' matching:innertext='fuzzy' fuzzylevel:innertext='0.47' /&gt;&quot;, in_CompanyNumber)]" Guid="7b128ef5-cdf0-443c-8bc9-91f54571c915" SearchSteps="FuzzySelector" />
+                      <uix:Target DesignTimeRectangle="1381, 610, 50, 50" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='search-submit' tag='BUTTON' type='submit' class='search-submit gem-c-search__submit' aaname='Search' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search' /&gt;" Guid="7c553233-7848-485d-ae7c-2aaef2e3f15d" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NCheckState.Target>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
           </Sequence>
         </ActivityAction>
