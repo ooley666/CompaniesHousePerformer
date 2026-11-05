@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge Search the register - Find and update co",
+  "Type": "Screen",
+  "Id": "aW64BVvaB0OoJCc34yKZhw",
+  "Reference": "OC9XDEt8Qk2vxzZfzQzDrg/aW64BVvaB0OoJCc34yKZhw",
+  "ParentRef": "OC9XDEt8Qk2vxzZfzQzDrg/qTzETAZ6jkmbVgOQBwVgmQ",
+  "Created": "2026-11-05T13:08:23.1239911Z",
+  "Updated": "2026-11-05T13:08:23.1239911Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

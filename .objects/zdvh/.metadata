@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge Search the register - Find and update company information - GOV.UK",
+  "Type": "App",
+  "Id": "zdvheRV190mEv1omwDap0g",
+  "Reference": "OC9XDEt8Qk2vxzZfzQzDrg/zdvheRV190mEv1omwDap0g",
+  "Created": "2026-11-05T13:08:23.0168346Z",
+  "Updated": "2026-11-05T13:08:23.0168346Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
