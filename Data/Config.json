@@ -4,6 +4,8 @@
 	  "OrchestratorFolderName": "CompaniesHouse",
 	  "OrchestratorQueueName": "CompaniesHouse_MaxLavrov",
 	  "OrchestratorStorageBucketName": "CompaniesHouse_MaxLavrov_Output",
+	  "OutputFilePath": "Data/Output/CompaniesInfo.xlsx",
+	  
 	  
   },
   "Constants": {

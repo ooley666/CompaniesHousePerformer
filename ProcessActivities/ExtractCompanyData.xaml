@@ -119,7 +119,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractCompanyData" sap:VirtualizedContainerService.HintSize="1070,3238" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractCompanyData" sap:VirtualizedContainerService.HintSize="1106,3238" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
