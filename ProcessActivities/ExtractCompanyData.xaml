@@ -1,7 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ExtractCompanyData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtractCompanyData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_CompanyNumber" Type="InArgument(x:String)" />
-    <x:Property Name="out_Success" Type="OutArgument(x:Boolean)" />
     <x:Property Name="out_dt_CompanyInfo" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
@@ -117,285 +116,256 @@
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractCompanyData" sap:VirtualizedContainerService.HintSize="1106,3238" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractCompanyData" sap:VirtualizedContainerService.HintSize="1106,2604" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="724,3215" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-      <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="722,2950" sap2010:WorkflowViewState.IdRef="Sequence_12">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Company overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,2890" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="583cfb24-413f-44d1-802a-a9841c3736b1" Version="V2">
-            <uix:NApplicationCard.Body>
-              <ActivityAction x:TypeArguments="x:Object">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,2748" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Company overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,2581" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="583cfb24-413f-44d1-802a-a9841c3736b1" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,2439" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="CompanyAddress" />
+              <Variable x:TypeArguments="x:String" Name="CompanyStatus" />
+              <Variable x:TypeArguments="x:String" Name="CompanyType" />
+              <Variable x:TypeArguments="x:String" Name="IncorporatedOn" />
+              <Variable x:TypeArguments="x:String" Name="CompanyName" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="If the company overview page contains Company REference Number, it is the right one" CheckWindowActive="True" DisplayName="Correct &quot;Company number&quot; appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,2379" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,1838" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="CompanyAddress" />
-                    <Variable x:TypeArguments="x:String" Name="CompanyStatus" />
-                    <Variable x:TypeArguments="x:String" Name="CompanyType" />
-                    <Variable x:TypeArguments="x:String" Name="IncorporatedOn" />
-                    <Variable x:TypeArguments="x:String" Name="CompanyName" />
+                    <Variable x:TypeArguments="x:Boolean" Name="DtFilled" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState CheckWindowActive="True" DisplayName="Correct &quot;Company number&quot; appears" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,2688" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" Version="V5">
-                    <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="650,2178" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="x:Boolean" Name="DtFilled" />
-                        </Sequence.Variables>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NGetText DisplayName="Get Text 'Company name'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[CompanyName]" Version="V5">
-                          <uix:NGetText.Target>
-                            <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/12313892" ContentHash="d_2bd03P50eaw7bG-i41OA" DesignTimeRectangle="481, 394, 623, 69" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='heading-xlarge' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="4a952bcd-ed6e-42c9-a4df-18385ff7aa5f" InformativeScreenshot="0f2ecc13beebe388d09e88c8569e60a7.jpg" Reference="bHP76iterEOjejFi4gjgZg/ZEFJZK-Dt0OMT4EyId_3NA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AROMA SPICE BIRSTALL LTD overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="481, 350, 217, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Advanced company searchLink opens in new window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentid='page-container' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link piwik-event' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="a0ff0619-346b-4697-be88-2a20c6286ca1" SearchSteps="FuzzySelector" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
-                          </uix:NGetText.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NGetText>
-                        <uix:NGetText DisplayName="Get Text 'Company address'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[CompanyAddress]" Version="V5">
-                          <uix:NGetText.ScrapingOptions>
-                            <InArgument x:TypeArguments="uix:NScrapingOptions" />
-                          </uix:NGetText.ScrapingOptions>
-                          <uix:NGetText.Target>
-                            <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/09328348" ContentHash="kzf-112Ig0qoTKqE35ObFw" DesignTimeRectangle="502, 471, 633, 23" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='roa-address' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SPAN' type='' class='text data' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="c3750692-3d30-4ee6-a7b3-a162c5e154b6" InformativeScreenshot="afc58352f554ae7a1bf60fa0c1ef3dc7.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/SKud4K7ZRUCjV7jEZ-OGUw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AGILE BUSINESS PROCESS UK LIMITED overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="502, 440, 918, 25" FuzzySelectorArgument="&lt;webctrl tag='DT' type='' class='' aaname='Registered office address' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Registered office address' /&gt;" Guid="daba8a02-1734-48ab-a0a1-6654757c70e9" SearchSteps="FuzzySelector" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                              <uix:TargetAnchorable.PointOffset>
-                                <uix:PointOffset X="0" Y="0" />
-                              </uix:TargetAnchorable.PointOffset>
-                            </uix:TargetAnchorable>
-                          </uix:NGetText.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NGetText>
-                        <uix:NGetText DisplayName="Get Text 'Company status'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[CompanyStatus]" Version="V5">
-                          <uix:NGetText.Target>
-                            <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/09328348" ContentHash="-KJYxuky_UG6uwpvM5b6sQ" DesignTimeRectangle="502, 555, 570, 25" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='company-status' matching:id='fuzzy' fuzzylevel:id='0.0' tag='DD' type='' class='text data' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="b6b807d0-ec31-49af-86e9-bda9d6eebd40" InformativeScreenshot="30e78392b07e1b2e826ca66fdd0e6795.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/q6q3bNoNy0Skfhiv_OBcAg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AGILE BUSINESS PROCESS UK LIMITED overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="502, 525, 601, 25" FuzzySelectorArgument="&lt;webctrl type='' tag='DT' class='' aaname='Company status' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Company status' /&gt;" Guid="e04339e1-86a9-4a7b-9cc2-75197500c345" SearchSteps="FuzzySelector" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                              <uix:TargetAnchorable.PointOffset>
-                                <uix:PointOffset X="0" Y="0" />
-                              </uix:TargetAnchorable.PointOffset>
-                            </uix:TargetAnchorable>
-                          </uix:NGetText.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NGetText>
-                        <uix:NGetText DisplayName="Get Text 'Company Type'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[CompanyType]" Version="V5">
-                          <uix:NGetText.Target>
-                            <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/09328348" ContentHash="QIu5aXPmiEusyFFsW_nzbA" DesignTimeRectangle="502, 551, 210, 23" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='company-type-value' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SPAN' type='' class='text data' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="b1f9a03d-63d9-4f3b-83fc-c164dff7d5f5" InformativeScreenshot="9224aae4c40adf94022d9c9c32e023f6.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/FU46M2TrbkKYCr2oA_VmyA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AGILE BUSINESS PROCESS UK LIMITED overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="502, 520, 601, 25" FuzzySelectorArgument="&lt;webctrl type='' tag='DT' class='' aaname='Company type' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Company type' /&gt;" Guid="9d0b80fa-b9f8-492c-9af8-a3d1c0e1a739" SearchSteps="FuzzySelector" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                              <uix:TargetAnchorable.PointOffset>
-                                <uix:PointOffset />
-                              </uix:TargetAnchorable.PointOffset>
-                            </uix:TargetAnchorable>
-                          </uix:NGetText.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NGetText>
-                        <uix:NGetText DisplayName="Get Text 'Incorporated on'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[IncorporatedOn]" Version="V5">
-                          <uix:NGetText.Target>
-                            <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/09328348" ContentHash="yL8Gf-lPykyoVfFe9cGJLg" DesignTimeRectangle="1133, 550, 286, 25" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='company-creation-date' matching:id='fuzzy' fuzzylevel:id='0.0' tag='DD' type='' class='data' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="86288b74-0479-4462-8b4e-75c9b216cdbf" InformativeScreenshot="d03069f243e0b036d9816a6f602941ee.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/I_5g-KLQiUufhsq28he5rA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AGILE BUSINESS PROCESS UK LIMITED overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target DesignTimeRectangle="1133, 520, 286, 25" FuzzySelectorArgument="&lt;webctrl id='company-birth-type' tag='DT' type='' class='' aaname='Incorporated on' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Incorporated on' /&gt;" Guid="17573155-45d8-494d-ad90-8bbb5be3b5e9" SearchSteps="FuzzySelector" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                              <uix:TargetAnchorable.PointOffset>
-                                <uix:PointOffset X="0" Y="0" />
-                              </uix:TargetAnchorable.PointOffset>
-                            </uix:TargetAnchorable>
-                          </uix:NGetText.Target>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NGetText>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Extracted all data fields OK&quot;]" />
-                        <ui:BuildDataTable DataTable="[out_dt_CompanyInfo]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="616,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_Name&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_Number&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_address&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_status&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_type&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Incorporated_x0020_on&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Build DataTable OK&quot;]" />
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CompanyName, in_CompanyNumber, CompanyAddress, CompanyStatus, CompanyType, IncorporatedOn}]" DataTable="[out_dt_CompanyInfo]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="616,221" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                        <Assign sap2010:Annotation.AnnotationText="Checks that all rows of DT are populated" sap:VirtualizedContainerService.HintSize="616,206" sap2010:WorkflowViewState.IdRef="Assign_3">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Boolean">[DtFilled]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Boolean">[out_dt_CompanyInfo.Rows(0).ItemArray.All(Function(c) c IsNot Nothing AndAlso Not IsDBNull(c) AndAlso Not String.IsNullOrWhiteSpace(c.ToString))]</InArgument>
-                          </Assign.Value>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Assign>
-                        <If Condition="[DtFilled]" sap:VirtualizedContainerService.HintSize="616,964" sap2010:WorkflowViewState.IdRef="If_2">
-                          <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,401" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Populated DataTable OK&quot;]" />
-                              <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,401" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Data extraction failed&quot;]" />
-                            </Sequence>
-                          </If.Else>
-                        </If>
-                      </Sequence>
-                    </uix:NCheckState.IfExists>
-                    <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="650,174" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Throw Exception="[new SystemException(&quot;Company overview page failed to load correctly&quot;)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_2">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Throw>
-                      </Sequence>
-                    </uix:NCheckState.IfNotExists>
-                    <uix:NCheckState.Target>
-                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/12313892" ContentHash="eZCdGldHhUuZoyNZm1bLRQ" DesignTimeRectangle="628, 485, 92, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='STRONG' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='*{0}' matching:aaname='fuzzy' fuzzylevel:aaname='0.46' innertext='*{0}' matching:innertext='fuzzy' fuzzylevel:innertext='0.46' /&gt;&quot;, in_CompanyNumber)]" Guid="995a6e7d-eb13-4eef-96e6-3855b689fb84" InformativeScreenshot="620878e2141e1ddff64ad752b230a201.jpg" Reference="bHP76iterEOjejFi4gjgZg/lIoSjnlWoEueKfPf-jjTpw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:NGetText DisplayName="Get Text 'Company name'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[CompanyName]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/12313892" ContentHash="d_2bd03P50eaw7bG-i41OA" DesignTimeRectangle="481, 394, 623, 69" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='heading-xlarge' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="4a952bcd-ed6e-42c9-a4df-18385ff7aa5f" InformativeScreenshot="0f2ecc13beebe388d09e88c8569e60a7.jpg" Reference="bHP76iterEOjejFi4gjgZg/ZEFJZK-Dt0OMT4EyId_3NA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AROMA SPICE BIRSTALL LTD overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
                           <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target DesignTimeRectangle="481, 484, 960, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='company-number' matching:id='fuzzy' fuzzylevel:id='0.0' tag='P' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="8eefadb6-3032-43c9-961a-c24416999fca" SearchSteps="FuzzySelector" />
+                            <uix:Target DesignTimeRectangle="481, 350, 217, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Advanced company searchLink opens in new window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentid='page-container' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='govuk-link piwik-event' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="a0ff0619-346b-4697-be88-2a20c6286ca1" SearchSteps="FuzzySelector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
-                    </uix:NCheckState.Target>
-                  </uix:NCheckState>
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Company address'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[CompanyAddress]" Version="V5">
+                    <uix:NGetText.ScrapingOptions>
+                      <InArgument x:TypeArguments="uix:NScrapingOptions" />
+                    </uix:NGetText.ScrapingOptions>
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/09328348" ContentHash="kzf-112Ig0qoTKqE35ObFw" DesignTimeRectangle="502, 471, 633, 23" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='roa-address' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SPAN' type='' class='text data' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="c3750692-3d30-4ee6-a7b3-a162c5e154b6" InformativeScreenshot="afc58352f554ae7a1bf60fa0c1ef3dc7.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/SKud4K7ZRUCjV7jEZ-OGUw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AGILE BUSINESS PROCESS UK LIMITED overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="502, 440, 918, 25" FuzzySelectorArgument="&lt;webctrl tag='DT' type='' class='' aaname='Registered office address' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Registered office address' /&gt;" Guid="daba8a02-1734-48ab-a0a1-6654757c70e9" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset X="0" Y="0" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Company status'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[CompanyStatus]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/09328348" ContentHash="-KJYxuky_UG6uwpvM5b6sQ" DesignTimeRectangle="502, 555, 570, 25" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='company-status' matching:id='fuzzy' fuzzylevel:id='0.0' tag='DD' type='' class='text data' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="b6b807d0-ec31-49af-86e9-bda9d6eebd40" InformativeScreenshot="30e78392b07e1b2e826ca66fdd0e6795.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/q6q3bNoNy0Skfhiv_OBcAg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AGILE BUSINESS PROCESS UK LIMITED overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="502, 525, 601, 25" FuzzySelectorArgument="&lt;webctrl type='' tag='DT' class='' aaname='Company status' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Company status' /&gt;" Guid="e04339e1-86a9-4a7b-9cc2-75197500c345" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset X="0" Y="0" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Company Type'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[CompanyType]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/09328348" ContentHash="QIu5aXPmiEusyFFsW_nzbA" DesignTimeRectangle="502, 551, 210, 23" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='company-type-value' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SPAN' type='' class='text data' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="b1f9a03d-63d9-4f3b-83fc-c164dff7d5f5" InformativeScreenshot="9224aae4c40adf94022d9c9c32e023f6.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/FU46M2TrbkKYCr2oA_VmyA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AGILE BUSINESS PROCESS UK LIMITED overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="502, 520, 601, 25" FuzzySelectorArgument="&lt;webctrl type='' tag='DT' class='' aaname='Company type' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Company type' /&gt;" Guid="9d0b80fa-b9f8-492c-9af8-a3d1c0e1a739" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Incorporated on'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,57" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="583cfb24-413f-44d1-802a-a9841c3736b1" TextString="[IncorporatedOn]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/09328348" ContentHash="yL8Gf-lPykyoVfFe9cGJLg" DesignTimeRectangle="1133, 550, 286, 25" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='company-creation-date' matching:id='fuzzy' fuzzylevel:id='0.0' tag='DD' type='' class='data' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="86288b74-0479-4462-8b4e-75c9b216cdbf" InformativeScreenshot="d03069f243e0b036d9816a6f602941ee.jpg" Reference="ygWG-HKd9kqI8Xa1AFPgyQ/I_5g-KLQiUufhsq28he5rA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='AGILE BUSINESS PROCESS UK LIMITED overview - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1133, 520, 286, 25" FuzzySelectorArgument="&lt;webctrl id='company-birth-type' tag='DT' type='' class='' aaname='Incorporated on' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Incorporated on' /&gt;" Guid="17573155-45d8-494d-ad90-8bbb5be3b5e9" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset X="0" Y="0" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NGetText>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Extracted all data fields OK&quot;]" />
+                  <ui:BuildDataTable sap2010:Annotation.AnnotationText="Builds empty DT with the necessary headers" DataTable="[out_dt_CompanyInfo]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="616,123" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_Name&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_Number&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_address&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_status&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Company_x0020_type&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Incorporated_x0020_on&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:BuildDataTable>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Build DataTable OK&quot;]" />
+                  <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Adds current company's information to the DT" ArrayRow="[{CompanyName, in_CompanyNumber, CompanyAddress, CompanyStatus, CompanyType, IncorporatedOn}]" DataTable="[out_dt_CompanyInfo]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="616,252" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AddDataRow>
+                  <Assign sap2010:Annotation.AnnotationText="Checks that all rows of DT are populated" sap:VirtualizedContainerService.HintSize="616,206" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[DtFilled]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[out_dt_CompanyInfo.Rows(0).ItemArray.All(Function(c) c IsNot Nothing AndAlso Not IsDBNull(c) AndAlso Not String.IsNullOrWhiteSpace(c.ToString))]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <If Condition="[DtFilled]" sap:VirtualizedContainerService.HintSize="616,562" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Populated DataTable OK&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[new SystemException(&quot;Data extraction failed&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
                 </Sequence>
-              </ActivityAction>
-            </uix:NApplicationCard.Body>
-            <uix:NApplicationCard.OCREngine>
-              <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
-                <ActivityFunc.Argument>
-                  <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
-                </ActivityFunc.Argument>
-              </ActivityFunc>
-            </uix:NApplicationCard.OCREngine>
-            <uix:NApplicationCard.TargetApp>
-              <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="KfH_yiSE9kuQBBwRSrAycA" IconBase64="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" InformativeScreenshot="0gOn400EKnUOQzvmr0yZbEw" Reference="bHP76iterEOjejFi4gjgZg/DoHyY7PLVU-TJ8EpFvJuTw" Selector="&lt;html app='msedge.exe' title='* overview - Find and update company information - GOV.UK' matching:title='fuzzy' fuzzylevel:title='0.66' /&gt;" Version="V3">
-                <uix:TargetApp.SapInfo>
-                  <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
-                </uix:TargetApp.SapInfo>
-              </uix:TargetApp>
-            </uix:NApplicationCard.TargetApp>
-          </uix:NApplicationCard>
-        </Sequence>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="722,108" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="650,174" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new SystemException(&quot;Company overview page failed to load correctly&quot;)]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="Throw_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Throw>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="find-and-update.company-information.service.gov.uk/company/12313892" ContentHash="eZCdGldHhUuZoyNZm1bLRQ" DesignTimeRectangle="628, 485, 92, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='STRONG' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='*{0}' matching:aaname='fuzzy' fuzzylevel:aaname='0.46' innertext='*{0}' matching:innertext='fuzzy' fuzzylevel:innertext='0.46' /&gt;&quot;, in_CompanyNumber)]" Guid="995a6e7d-eb13-4eef-96e6-3855b689fb84" InformativeScreenshot="620878e2141e1ddff64ad752b230a201.jpg" Reference="bHP76iterEOjejFi4gjgZg/lIoSjnlWoEueKfPf-jjTpw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Find and update company information - GOV.UK' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="481, 484, 960, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='company-number' matching:id='fuzzy' fuzzylevel:id='0.0' tag='P' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="8eefadb6-3032-43c9-961a-c24416999fca" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Rethrow sap:VirtualizedContainerService.HintSize="688,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
-            </Sequence>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-      <TryCatch.Finally>
-        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="722,25" sap2010:WorkflowViewState.IdRef="Sequence_13">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </Sequence>
-      </TryCatch.Finally>
-    </TryCatch>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="KfH_yiSE9kuQBBwRSrAycA" IconBase64="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" InformativeScreenshot="0gOn400EKnUOQzvmr0yZbEw" Reference="bHP76iterEOjejFi4gjgZg/DoHyY7PLVU-TJ8EpFvJuTw" Selector="&lt;html app='msedge.exe' title='* overview - Find and update company information - GOV.UK' matching:title='fuzzy' fuzzylevel:title='0.66' /&gt;" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
